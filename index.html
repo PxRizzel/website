@@ -241,88 +241,55 @@
           document.getElementById('totalHidden').value = "$0";
           return;
         }
-  
+    
         let total = parseFloat(selectedService.value.match(/\$([\d]+)/)[1]);
-  
+    
         const checkboxes = document.querySelectorAll('input[type="checkbox"]:checked');
         checkboxes.forEach(cb => {
           const match = cb.value.match(/\+?\$?(\d+)/);
           if (match) total += parseFloat(match[1]);
         });
-  
+    
         document.getElementById('total').innerText = total;
         document.getElementById('totalHidden').value = `$${total}`;
       }
-  
+    
       document.getElementById('quote-form').addEventListener('input', calculateTotal);
-  
+    
       document.getElementById('quote-form').addEventListener('submit', async function (e) {
         e.preventDefault();
         const form = e.target;
         const formData = new FormData(form);
-  
+    
         const response = await fetch(form.action, {
           method: "POST",
           body: formData,
           headers: { 'Accept': 'application/json' }
         });
-  
+    
         if (response.ok) {
+          // Reset form values and price
           form.reset();
-          document.getElementById('total').innerText = "0";
-          document.getElementById('success-message').style.display = 'block';
+          calculateTotal();
+    
+          // Show success message
+          const successMsg = document.getElementById('success-message');
+          successMsg.style.display = 'block';
+    
+          // Temporarily disable form
+          form.style.display = 'none';
+    
+          // After 5 seconds, reset UI
+          setTimeout(() => {
+            successMsg.style.display = 'none';
+            form.style.display = 'flex';
+          }, 5000);
         } else {
           alert("❌ Something went wrong submitting the form.");
         }
       });
     </script>
-  </section>
-  
-  
-  
-</script>
-
-
-  <footer class="footer">
-    <p>&copy; 2025 PxRizzel IT Solutions</p>
-  </footer>
-
-  <script>
-    function calculateTotal() {
-      const serviceDropdown = document.getElementById('service');
-      const selectedService = serviceDropdown.options[serviceDropdown.selectedIndex];
-      let total = parseFloat(selectedService.textContent.match(/\$([\d]+)/)[1]);
-  
-      const checkboxes = document.querySelectorAll('input[type="checkbox"]:checked');
-      checkboxes.forEach(cb => {
-        const match = cb.value.match(/\+(\$?)(\d+)/);
-        if (match) total += parseFloat(match[2]);
-      });
-  
-      document.getElementById('total').innerText = total;
-      document.getElementById('totalHidden').value = `$${total}`;
-    }
-  
-    document.addEventListener("DOMContentLoaded", function () {
-      const quoteForm = document.getElementById("quote-form");
-      quoteForm.addEventListener("submit", async function (e) {
-        e.preventDefault();
-        const formData = new FormData(quoteForm);
-        const response = await fetch(quoteForm.action, {
-          method: "POST",
-          body: formData,
-          headers: { Accept: "application/json" },
-        });
-  
-        if (response.ok) {
-          quoteForm.style.display = "none";
-          document.getElementById("quote-success").style.display = "block";
-        } else {
-          alert("There was an issue submitting your quote. Please try again.");
-        }
-      });
-    });
-  </script>
+    
   
 </body>
 </html>
