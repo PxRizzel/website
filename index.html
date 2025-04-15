@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PxRizzel IT Solutions</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #0e0e0e;
+      color: #00bfff;
+    }
+
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1.25rem 2rem;
+      background-color: #000;
+      border-bottom: 2px solid #00bfff;
+      min-height: 100px;
+    }
+
+    .logo {
+      height: 100px;
+      object-fit: contain;
+      transition: filter 0.3s ease-in-out;
+    }
+
+    .logo:hover {
+      filter: drop-shadow(0 0 8px #00bfff);
+    }
+
+    .nav {
+      list-style: none;
+      display: flex;
+      gap: 1.5rem;
+    }
+
+    .nav a {
+      color: #00bfff;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .nav a:hover {
+      text-decoration: underline;
+    }
+
+    .hero {
+      text-align: center;
+      padding: 4rem 2rem;
+      background: #111;
+    }
+
+    .hero h1 {
+      font-size: 3rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .cta-button {
+      margin-top: 1.5rem;
+      display: inline-block;
+      padding: 0.75rem 1.5rem;
+      background-color: #00bfff;
+      color: #000;
+      font-weight: bold;
+      border: none;
+      border-radius: 0.5rem;
+      text-decoration: none;
+      transition: 0.2s;
+    }
+
+    .cta-button:hover {
+      background-color: #0099cc;
+    }
+
+    .section {
+      padding: 3rem 2rem;
+      text-align: center;
+    }
+
+    .services {
+      list-style: none;
+      padding: 0;
+      margin-top: 1.5rem;
+    }
+
+    .services li {
+      margin-bottom: 1rem;
+      font-size: 1.1rem;
+    }
+
+    .contact-form, .quote-form {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      max-width: 400px;
+      margin: 0 auto;
+    }
+
+    .contact-form input,
+    .contact-form textarea,
+    .quote-form select,
+    .quote-form input[type="checkbox"] {
+      padding: 0.75rem;
+      border: 1px solid #00bfff;
+      background-color: #111;
+      color: #00bfff;
+      border-radius: 0.25rem;
+    }
+
+    .contact-form button, .quote-form button {
+      padding: 0.75rem;
+      background-color: #00bfff;
+      color: #000;
+      font-weight: bold;
+      border: none;
+      border-radius: 0.5rem;
+      cursor: pointer;
+    }
+
+    .contact-form button:hover, .quote-form button:hover {
+      background-color: #0099cc;
+    }
+
+    .footer {
+      text-align: center;
+      padding: 1rem;
+      background-color: #000;
+      border-top: 2px solid #00bfff;
+    }
+  </style>
+</head>
+<body>
+  <header class="header">
+    <img 
+      src="https://i.ibb.co/F49JyN25/85f98a9b-1ebb-4edb-8a1b-86f2218745c5-part2.jpg" 
+      alt="PxRizzel Logo" 
+      class="logo"
+    />
+    <nav>
+      <ul class="nav">
+        <li><a href="#services">Services</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#quote">Quote</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <h1>IT Solutions by PxRizzel</h1>
+    <p>Custom Gaming Rigs | PC Cleanup | General IT Help</p>
+    <a href="#quote" class="cta-button">Get a Quote</a>
+  </section>
+
+  <section id="services" class="section">
+    <h2>Services</h2>
+    <ul class="services">
+      <li>🖥️ Custom Gaming PC Builds</li>
+      <li>🧼 Deep PC Cleaning & Optimization</li>
+      <li>🔧 Hardware Upgrades</li>
+      <li>🛠️ Troubleshooting & Repairs</li>
+      <li>🌐 Home Network Setup</li>
+    </ul>
+  </section>
+
+  <section id="quote" class="section">
+    <h2>Quote Estimator</h2>
+  
+    <form id="quote-form" class="quote-form" action="https://formspree.io/f/manekyrk" method="POST">
+      <input type="text" name="name" placeholder="Name" required />
+      <input type="email" name="email" placeholder="Email" required />
+  
+      <p style="text-align: left;"><strong>Choose a service:</strong></p>
+  
+      <label style="display: flex; align-items: center; gap: 0.75rem; margin: 0.5rem 0;">
+        <img src="https://cdn-icons-png.flaticon.com/512/1055/1055687.png" style="width: 32px; height: 32px; object-fit: contain;" />
+        <input type="radio" name="service" value="Custom Gaming PC Build - $110" required />
+        <span>Custom Gaming PC Build – $110</span>
+      </label>
+  
+      <label style="display: flex; align-items: center; gap: 0.75rem; margin: 0.5rem 0;">
+        <img src="https://cdn-icons-png.flaticon.com/512/2913/2913465.png" style="width: 32px; height: 32px; object-fit: contain;" />
+        <input type="radio" name="service" value="PC Cleaning & Optimization - $45" />
+        <span>PC Cleaning & Optimization – $45</span>
+      </label>
+  
+      <label style="display: flex; align-items: center; gap: 0.75rem; margin: 0.5rem 0;">
+        <img src="https://cdn-icons-png.flaticon.com/512/1055/1055688.png" style="width: 32px; height: 32px; object-fit: contain;" />
+        <input type="radio" name="service" value="Hardware Upgrade - $40" />
+        <span>Hardware Upgrade – $40</span>
+      </label>
+  
+      <label style="display: flex; align-items: center; gap: 0.75rem; margin: 0.5rem 0;">
+        <img src="https://cdn-icons-png.flaticon.com/512/2910/2910791.png" style="width: 32px; height: 32px; object-fit: contain;" />
+        <input type="radio" name="service" value="Troubleshooting & Repairs - $60" />
+        <span>Troubleshooting & Repairs – $60</span>
+      </label>
+  
+      <label style="display: flex; align-items: center; gap: 0.75rem; margin: 0.5rem 0;">
+        <img src="https://cdn-icons-png.flaticon.com/512/2913/2913464.png" style="width: 32px; height: 32px; object-fit: contain;" />
+        <input type="radio" name="service" value="Home Network Setup - $70" />
+        <span>Home Network Setup – $70</span>
+      </label>
+  
+      <p style="text-align: left; margin-top: 1rem;"><strong>Add-ons:</strong></p>
+  
+      <label style="display: flex; align-items: center; gap: 0.75rem;">
+        <input type="checkbox" name="addons" value="Rush Service +$50" />
+        <span>Rush Service (+$50)</span>
+      </label>
+  
+      <label style="display: flex; align-items: center; gap: 0.75rem;">
+        <input type="checkbox" name="addons" value="RGB Customization +$60" />
+        <span>RGB Customization (+$60)</span>
+      </label>
+  
+      <label style="display: flex; align-items: center; gap: 0.75rem;">
+        <input type="checkbox" name="addons" value="Overclocking Setup +$40" />
+        <span>Overclocking Setup (+$40)</span>
+      </label>
+  
+      <input type="hidden" id="totalHidden" name="total" value="$0" />
+      <h3>Total Estimate: $<span id="total">0</span></h3>
+  
+      <button type="submit">Request This Quote</button>
+    </form>
+  
+    <p id="success-message" style="color: #00ff99; text-align: center; display: none;">
+      ✅ Quote successfully submitted. I’ll be in touch soon!
+    </p>
+  
+    <script>
+      function calculateTotal() {
+        const selectedService = document.querySelector('input[name="service"]:checked');
+        if (!selectedService) {
+          document.getElementById('total').innerText = 0;
+          document.getElementById('totalHidden').value = "$0";
+          return;
+        }
+  
+        let total = parseFloat(selectedService.value.match(/\$([\d]+)/)[1]);
+  
+        const checkboxes = document.querySelectorAll('input[type="checkbox"]:checked');
+        checkboxes.forEach(cb => {
+          const match = cb.value.match(/\+?\$?(\d+)/);
+          if (match) total += parseFloat(match[1]);
+        });
+  
+        document.getElementById('total').innerText = total;
+        document.getElementById('totalHidden').value = `$${total}`;
+      }
+  
+      document.getElementById('quote-form').addEventListener('input', calculateTotal);
+  
+      document.getElementById('quote-form').addEventListener('submit', async function (e) {
+        e.preventDefault();
+        const form = e.target;
+        const formData = new FormData(form);
+  
+        const response = await fetch(form.action, {
+          method: "POST",
+          body: formData,
+          headers: { 'Accept': 'application/json' }
+        });
+  
+        if (response.ok) {
+          form.reset();
+          document.getElementById('total').innerText = "0";
+          document.getElementById('success-message').style.display = 'block';
+        } else {
+          alert("❌ Something went wrong submitting the form.");
+        }
+      });
+    </script>
+  </section>
+  
+  
+  
+</script>
+
+
+  <footer class="footer">
+    <p>&copy; 2025 PxRizzel IT Solutions</p>
+  </footer>
+
+  <script>
+    function calculateTotal() {
+      const serviceDropdown = document.getElementById('service');
+      const selectedService = serviceDropdown.options[serviceDropdown.selectedIndex];
+      let total = parseFloat(selectedService.textContent.match(/\$([\d]+)/)[1]);
+  
+      const checkboxes = document.querySelectorAll('input[type="checkbox"]:checked');
+      checkboxes.forEach(cb => {
+        const match = cb.value.match(/\+(\$?)(\d+)/);
+        if (match) total += parseFloat(match[2]);
+      });
+  
+      document.getElementById('total').innerText = total;
+      document.getElementById('totalHidden').value = `$${total}`;
+    }
+  
+    document.addEventListener("DOMContentLoaded", function () {
+      const quoteForm = document.getElementById("quote-form");
+      quoteForm.addEventListener("submit", async function (e) {
+        e.preventDefault();
+        const formData = new FormData(quoteForm);
+        const response = await fetch(quoteForm.action, {
+          method: "POST",
+          body: formData,
+          headers: { Accept: "application/json" },
+        });
+  
+        if (response.ok) {
+          quoteForm.style.display = "none";
+          document.getElementById("quote-success").style.display = "block";
+        } else {
+          alert("There was an issue submitting your quote. Please try again.");
+        }
+      });
+    });
+  </script>
+  
+</body>
+</html>
